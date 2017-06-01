@@ -36,4 +36,17 @@ with open('kaca.csv', 'wb') as csvfile:
                     mp4_low_id = each["download_urls"]["mp4-low"]
                     png_id = each["download_urls"]["png"]
                     vid_title = each["translated_title"]
-                    spamwriter.writerow([e0,e1['id'],e2['id'],e1['title'],e2['title'],e1['url'],e2['url'],vid_title,youtube_id,mp4_id,mp4_low_id,png_id])
+                    spamwriter.writerow([
+                        e0.replace(',','').encode('utf-8'),
+                        e1['id'].replace(',','').encode('utf-8'),
+                        e2['id'].replace(',','').encode('utf-8'),
+                        e1['title'].replace(',','').encode('utf-8'),
+                        e2['title'].replace(',','').encode('utf-8'),
+                        e1['url'].replace(',','').encode('utf-8'),
+                        e2['url'].replace(',','').encode('utf-8'),
+                        vid_title.replace(',','').encode('utf-8'),
+                        youtube_id,
+                        mp4_id,
+                        mp4_low_id,
+                        png_id
+                        ])
