@@ -33,8 +33,12 @@ with open('kaca.csv', 'wb') as csvfile:
                 for each in c:
                     youtube_id = "https://www.youtube.com/watch?v="+each["translated_youtube_id"]
                     mp4_id = each["download_urls"]["mp4"]
-                    mp4_low_id = each["download_urls"]["mp4-low"]
-                    png_id = each["download_urls"]["png"]
+		    mp4_low_id = "Does not exist"
+		    try:
+                    	mp4_low_id = each["download_urls"]["mp4-low"]
+                    except Exception:
+			mp4_low_id = "Does not exist"
+		    png_id = each["download_urls"]["png"]
                     vid_title = each["translated_title"]
                     spamwriter.writerow([
                         e0.replace(',','').encode('utf-8'),
