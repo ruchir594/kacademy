@@ -1,4 +1,7 @@
 allchar = [
+    'early-math',
+    'arithmetic',
+    'algebra',
     'geometry',
     'trigonometry',
     'statistics-probability',
