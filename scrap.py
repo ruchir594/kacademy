@@ -11,7 +11,7 @@ import csv
 
 
 from api_models import *
-khan = Khan(lang="es")
+khan = Khan(lang="en")
 
 with open('kaca.csv', 'wb') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',',
