@@ -35,6 +35,7 @@ with open('kaca.csv', 'wb') as csvfile:
             for e2 in b['children']:
                 print 'e2 ', e2['id']
                 c = khan.get_topic_videos(e2['id'])
+                c_exercise = khan.get_topic_exercises(e2['id'])
                 # - going third layer in
                 for each in c:
                     youtube_id = "https://www.youtube.com/watch?v="+each["translated_youtube_id"]
@@ -61,3 +62,6 @@ with open('kaca.csv', 'wb') as csvfile:
                         mp4_low_id,
                         png_id
                         ])
+                print 'exercises....'
+                for each in c_exercise:
+                    print each
