@@ -37,7 +37,7 @@ with open('kaca_exer.csv', 'wb') as csvfile:
                 c = khan.get_topic_videos(e2['id'])
                 c_exercise = khan.get_topic_exercises(e2['id'])
                 # - going third layer in
-                for each in c:
+                """for each in c:
                     youtube_id = "https://www.youtube.com/watch?v="+each["translated_youtube_id"]
                     mp4_id = each["download_urls"]["mp4"]
                     mp4_low_id = 'Does not exist'
@@ -61,12 +61,12 @@ with open('kaca_exer.csv', 'wb') as csvfile:
                         mp4_id,
                         mp4_low_id,
                         png_id
-                        ])
-                '''print 'exercises....'
+                        ])"""
+                #print 'exercises....'
                 for each in c_exercise:
                     image_url = each["image_url"]
                     ka_url = each["ka_url"]
-                    tl_title = each["translated_title"]
+                    vid_title = each["translated_title"]
                     # writing into CSV file
                     spamwriter.writerow([
                         e0.replace(',','').encode('utf-8'),
@@ -78,6 +78,5 @@ with open('kaca_exer.csv', 'wb') as csvfile:
                         e2['url'].replace(',','').encode('utf-8'),
                         vid_title.replace(',','').encode('utf-8'),
                         image_url,
-                        ka_url,
-                        tl_title
-                        ])'''
+                        ka_url
+                        ])
